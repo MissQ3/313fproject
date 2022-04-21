@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">test</string>
+    <string name="category">類別</string>
+    <string name="name">名稱</string>
+    <string name="address">地址</string>
+    <string name="gender">就讀學生性別</string>
+    <string name="session">學校授課時間</string>
+    <string name="district">分區</string>
+    <string name="fintype">資助種類</string>
+    <string name="level">學校類型</string>
+    <string name="tele">聯絡電話</string>
+    <string name="fax">傳真號碼</string>
+    <string name="website">網頁</string>
+    <string name="religion">宗教</string>
+</resources>
