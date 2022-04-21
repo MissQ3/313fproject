@@ -87,26 +87,21 @@ public class Result extends AppCompatActivity {
                         TextView resultSkuName = skuDetail.findViewById(R.id.name);
                         TextView resultAddress = skuDetail.findViewById(R.id.address);
                         TextView resultTel = skuDetail.findViewById(R.id.tele);
+                        TextView resultWeb = skuDetail.findViewById(R.id.web);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
-                            /*builder.setTitle(contact.get(SchoolInfo.enname));
-                            builder.setMessage(Html.fromHtml(
-                                    "<b>Mobile: </b>" + contact.get(SchoolInfo.entel) + "<br/>" +
-                                            "<b>Location: </b>" + contact.get(SchoolInfo.enaddress)
-                            ));*/
                             resultSkuName.setText(contact.get(SchoolInfo.enname));
                             resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
                             resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
+                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
+                                    "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
-                            /*builder.setTitle(contact.get(SchoolInfo.chname));
-                            builder.setMessage(Html.fromHtml(
-                                    "<b>聯絡電話: </b>" + contact.get(SchoolInfo.chtel) + "<br/>" +
-                                            "<b>地址: </b>" + contact.get(SchoolInfo.chaddress)
-                            ));*/
                             resultSkuName.setText(contact.get(SchoolInfo.chname));
                             resultAddress.setText(contact.get(SchoolInfo.chaddress) + "\n");
                             resultTel.setText("聯絡電話: " + contact.get(SchoolInfo.chtel));
+                            resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + contact.get(SchoolInfo.chweb) +
+                                    "'> " + contact.get(SchoolInfo.chweb) + " </a>"));
                             locButton = "顯示地圖";
                         }
 

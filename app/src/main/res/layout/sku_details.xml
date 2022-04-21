@@ -32,6 +32,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:text="Telephone Number" />
+            android:text="Telephone: Some random number" />
+
+        <TextView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Website: Link (Not the one from Zelda)"
+            android:autoLink="web"
+            android:linksClickable="true"/>
     </LinearLayout>
 </LinearLayout>

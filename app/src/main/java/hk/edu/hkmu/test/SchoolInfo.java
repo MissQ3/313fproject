@@ -25,7 +25,7 @@ public class SchoolInfo {
     public static String chtel = "聯絡電話";
     public static String enfax = "Fax Number";
     public static String chfax = "傳真號碼";
-    public static String enweb = "WebSite";
+    public static String enweb = "Website";
     public static String chweb = "網頁";
     public static String enreligion = "Religion";
     public static String chreligion = "宗教";
