@@ -86,56 +86,54 @@ public class Result extends AppCompatActivity {
 
                         TextView resultSkuName = skuDetail.findViewById(R.id.name);
                         TextView resultAddress = skuDetail.findViewById(R.id.address);
-                        TextView resultGender = skuDetail.findViewById(R.id.gender);
                         TextView resultTel = skuDetail.findViewById(R.id.tele);
                         TextView resultWeb = skuDetail.findViewById(R.id.web);
-                        TextView resultRelig = skuDetail.findViewById(R.id.religion);
+                        TextView resultCat = skuDetail.findViewById(R.id.skuCat);
+                        TextView resultGender = skuDetail.findViewById(R.id.skuGender);
+                        TextView resultSession = skuDetail.findViewById(R.id.skuSession);
+                        TextView resultDISTRICT = skuDetail.findViewById(R.id.skuDistrict);
+                        TextView resultFinance = skuDetail.findViewById(R.id.skuFinance);
+                        TextView resultLevel = skuDetail.findViewById(R.id.skuLevel);
+                        TextView resultFax = skuDetail.findViewById(R.id.skuFax);
+                        TextView resultReligion = skuDetail.findViewById(R.id.skuReligion);
+                        
+                        ArrayList<JSONObject> result=Getdetail.getDetail(contact.get(SchoolInfo.schoolid),SchoolInfo.infoList);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
                             resultSkuName.setText(contact.get(SchoolInfo.enname));
                             resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
+                            resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
+                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
+                                    "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
+                            resultCat.setText("CATEGORY:"+engGetdetail.getCategory(result));
+                            resultGender.setText("STUDENTS GENDER: "+engGetdetail.getGender(result));
+                            resultSession.setText("SESSION: "+engGetdetail.getSession(result));
+                            resultDISTRICT.setText("DISTRICT: "+engGetdetail.getDistrict(result));
+                            resultFinance.setText("FINANCE TYPE: "+engGetdetail.getFinance(result));
+                            resultLevel.setText("SCHOOL LEVEL: "+engGetdetail.getLevel(result));
+                            resultFax.setText("FAX NUMBER: "+engGetdetail.getFax(result));
+                            resultReligion.setText("RELIGION: "+engGetdetail.getReligion(result));
 
-                            resultGender.setText("Students Gender: " + contact.get(SchoolInfo.engender));
-
-                            if (contact.get(SchoolInfo.entel).isEmpty()) {
-                                resultTel.setText("Telephone: N/A");
-                            }
-                            else {
-                                resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
-                            }
-
-                            if (contact.get(SchoolInfo.enweb).isEmpty()){
-                                resultWeb.setText("Website: N/A");
-                            }
-                            else {
-                                resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.chweb) +
-                                        "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
-                            }
-
-                            resultRelig.setText("Religion: " + contact.get(SchoolInfo.enreligion));
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
                             resultSkuName.setText(contact.get(SchoolInfo.chname));
                             resultAddress.setText(contact.get(SchoolInfo.chaddress) + "\n");
-
-                            resultGender.setText("就讀學生性別: " + contact.get(SchoolInfo.chgender));
-
-                            if (contact.get(SchoolInfo.chtel).isEmpty()) {
-                                resultTel.setText("聯絡電話: N/A");
-                            }
-                            else {
-                                resultTel.setText("聯絡電話: " + contact.get(SchoolInfo.chtel));
-                            }
-
-                            if (contact.get(SchoolInfo.chweb).isEmpty()){
-                                resultWeb.setText("網站: N/A");
-                            }
-                            else {
-                                resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + contact.get(SchoolInfo.chweb) +
-                                        "'> " + contact.get(SchoolInfo.chweb) + " </a>"));
-                            }
-
-                            resultRelig.setText("宗教: " + contact.get(SchoolInfo.chreligion));
+                            resultTel.setText("聯絡電話: " + contact.get(SchoolInfo.chtel));
+                            resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + contact.get(SchoolInfo.chweb) +
+                                    "'> " + contact.get(SchoolInfo.chweb) + " </a>"));
+                            resultSkuName.setText(contact.get(SchoolInfo.enname));
+                            resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
+                            resultTel.setText("電話: " + contact.get(SchoolInfo.entel));
+                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
+                                    "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
+                            resultCat.setText("類型 :"+zhGetdetail.getCategory(result));
+                            resultGender.setText("就讀學生性別: "+zhGetdetail.getGender(result));
+                            resultSession.setText("學校授課時間: "+zhGetdetail.getSession(result));
+                            resultDISTRICT.setText("分區: "+zhGetdetail.getDistrict(result));
+                            resultFinance.setText("資助種類: "+zhGetdetail.getFinance(result));
+                            resultLevel.setText("學校類型: "+zhGetdetail.getLevel(result));
+                            resultFax.setText("傳真號碼: "+zhGetdetail.getFax(result));
+                            resultReligion.setText("宗教: "+zhGetdetail.getReligion(result));
                             locButton = "顯示地圖";
                         }
 
