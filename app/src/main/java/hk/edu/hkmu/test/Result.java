@@ -41,6 +41,7 @@ public class Result extends AppCompatActivity {
         });
         SchoolInfo.eninfoList.clear();
         SchoolInfo.chinfoList.clear();
+        SchoolInfo.infoList.clear();
         JsonHandlerThread jsonHandlerThread = new JsonHandlerThread();
 
         jsonHandlerThread.start();
