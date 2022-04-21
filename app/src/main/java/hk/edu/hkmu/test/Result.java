@@ -84,24 +84,31 @@ public class Result extends AppCompatActivity {
                         String locButton = "";
                         builder.setView(skuDetail);
 
+                        TextView resultSkuName = skuDetail.findViewById(R.id.name);
+                        TextView resultAddress = skuDetail.findViewById(R.id.address);
+                        TextView resultTel = skuDetail.findViewById(R.id.tele);
+
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
                             /*builder.setTitle(contact.get(SchoolInfo.enname));
                             builder.setMessage(Html.fromHtml(
                                     "<b>Mobile: </b>" + contact.get(SchoolInfo.entel) + "<br/>" +
                                             "<b>Location: </b>" + contact.get(SchoolInfo.enaddress)
                             ));*/
-                            locButton = "Location";
+                            resultSkuName.setText(contact.get(SchoolInfo.enname));
+                            resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
+                            resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
+                            locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
-                            builder.setTitle(contact.get(SchoolInfo.chname));
-                           /* builder.setMessage(Html.fromHtml(
+                            /*builder.setTitle(contact.get(SchoolInfo.chname));
+                            builder.setMessage(Html.fromHtml(
                                     "<b>聯絡電話: </b>" + contact.get(SchoolInfo.chtel) + "<br/>" +
                                             "<b>地址: </b>" + contact.get(SchoolInfo.chaddress)
                             ));*/
-                            locButton = "位置";
+                            resultSkuName.setText(contact.get(SchoolInfo.chname));
+                            resultAddress.setText(contact.get(SchoolInfo.chaddress) + "\n");
+                            resultTel.setText("聯絡電話: " + contact.get(SchoolInfo.chtel));
+                            locButton = "顯示地圖";
                         }
-
-                        TextView resultTextView = skuDetail.findViewById(R.id.resultname);
-                        resultTextView.setText(contact.get(SchoolInfo.enname));
 
                         builder.setNegativeButton(locButton,null);
                         /*builder.setPositiveButton(detailButton,new DialogInterface.OnClickListener() {
