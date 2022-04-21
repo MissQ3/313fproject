@@ -1,65 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="50px">
 
+
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    <LinearLayout
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10px">
+
+        <TextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="10px"
-            android:scrollbars="vertical"
-            android:scrollbarAlwaysDrawVerticalTrack="true">
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="School Name" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:text="School Name" />
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="School Address\n" />
 
-            <TextView
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="School Address\n"/>
+        <TextView
+            android:id="@+id/tele"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Telephone: Some random number" />
 
-            <TextView
-                android:id="@+id/gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="Students Gender: Boys? Or girls?"/>
+        <TextView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Website: Link (Not the one from Zelda)"
+            android:autoLink="web"
+            android:linksClickable="true"/>
 
-            <TextView
-                android:id="@+id/tele"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="Telephone: Some random number"/>
+        <TextView
+            android:id="@+id/skuCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            />
 
-            <TextView
-                android:id="@+id/web"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="Website: Link (Not the one from Zelda)"
-                android:autoLink="web"
-                android:linksClickable="true"/>
 
-            <TextView
-                android:id="@+id/religion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="Religion: Do you love Jesus or Buddha?" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/skuGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+             />
+        <TextView
+            android:id="@+id/skuSession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Session" />
+        <TextView
+            android:id="@+id/skuDistrict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="District" />
+        <TextView
+            android:id="@+id/skuFinance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Finance" />
+        <TextView
+            android:id="@+id/skuLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="level" />
+        <TextView
+            android:id="@+id/skuFax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="fax" />
+        <TextView
+            android:id="@+id/skuReligion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="religion" />
+    </LinearLayout>
     </ScrollView>
 </LinearLayout>
