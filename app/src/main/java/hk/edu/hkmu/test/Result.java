@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,12 +77,12 @@ public class Result extends AppCompatActivity {
                     public void onItemClick(AdapterView<?>parent, View view, int position, long id){
                         HashMap<String,String> contact = searching.searchlist.get(position);
                         AlertDialog.Builder builder = new AlertDialog.Builder(Result.this);
-                        builder.setTitle(contact.get(SchoolInfo.enname));
 
                         String locButton = "";
                         String detailButton = "";
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
+                            builder.setTitle(contact.get(SchoolInfo.enname));
                             builder.setMessage(Html.fromHtml(
                                     "<b>Mobile: </b>" + contact.get(SchoolInfo.entel) + "<br/>" +
                                             "<b>Location: </b>" + contact.get(SchoolInfo.enaddress)
@@ -89,6 +90,7 @@ public class Result extends AppCompatActivity {
                             locButton = "Location";
                             detailButton = "Details";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
+                            builder.setTitle(contact.get(SchoolInfo.chname));
                             builder.setMessage(Html.fromHtml(
                                     "<b>聯絡電話: </b>" + contact.get(SchoolInfo.chtel) + "<br/>" +
                                             "<b>地址: </b>" + contact.get(SchoolInfo.chaddress)
@@ -102,6 +104,8 @@ public class Result extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 setContentView(R.layout.sku_details);
+                                TextView err = (TextView)findViewById(R.id.name);
+                                err.setText(SchoolInfo.enname);
                             }
                         });
 
