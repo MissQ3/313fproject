@@ -1,5 +1,7 @@
 package hk.edu.hkmu.test;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -33,6 +35,8 @@ public class SchoolInfo {
 
     public static ArrayList<HashMap<String, String>> eninfoList = new ArrayList<>();
     public static ArrayList<HashMap<String, String>> chinfoList = new ArrayList<>();
+    public static ArrayList<JSONObject> infoList = new ArrayList<>();
+
     // Creates and add contact to contact list
     public static void enaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion) {
 
@@ -72,4 +76,8 @@ public class SchoolInfo {
 
         chinfoList.add(info);
     }
+
+    public static void getlist(JSONObject obj){
+        infoList.add((JSONObject) obj);
+    };
 }
