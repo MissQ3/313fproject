@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -75,8 +76,16 @@ public class Result extends AppCompatActivity {
                         HashMap<String,String> contact = searching.searchlist.get(position);
                         AlertDialog.Builder builder = new AlertDialog.Builder(Result.this);
                         builder.setTitle(contact.get(SchoolInfo.enname));
-                        builder.setMessage("Mobile: " + contact.get(SchoolInfo.entel));
+                        builder.setMessage(Html.fromHtml(
+                                "<b>Mobile: </b>" + contact.get(SchoolInfo.entel) + "<br/>" +
+                                        "<b>Location: </b>" + contact.get(SchoolInfo.enaddress)
+                        ));
+
+                        builder.setNeutralButton("Location",null);
+                        builder.setPositiveButton("Details",null);
+
                         AlertDialog alertDialog = builder.create();
+
                         alertDialog.show();
                     }
                 }
