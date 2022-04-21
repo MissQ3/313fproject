@@ -69,7 +69,6 @@ public class JsonHandlerThread extends Thread {
         if (infoStr != null) {
             try {
                 JSONArray info = new JSONArray(infoStr);
-                if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
                     // looping through All Infos
                     for (int i = 1; i < info.length(); i++) {
                         JSONObject c = info.getJSONObject(i);
@@ -88,7 +87,6 @@ public class JsonHandlerThread extends Thread {
                         String enreligion = c.getString("AF");
                         SchoolInfo.enaddContact(schoolid, encat, enname, enaddress, engender, ensession, endistrict, enfintype, enlevel, entele, enfax, enwebsite, enreligion);
                     }
-                }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())) {
                     for (int i = 1; i < info.length(); i++) {
                         JSONObject c = info.getJSONObject(i);
                         String schoolid = c.getString("A");
@@ -106,7 +104,7 @@ public class JsonHandlerThread extends Thread {
                         String chreligion = c.getString("AG");
                         SchoolInfo.chaddContact(schoolid, chcat, chname, chaddress, chgender, chsession, chdistrict, chfintype, chlevel, chtele, chfax, chwebsite, chreligion);
                 }
-            }}catch (final JSONException e) {
+            }catch (final JSONException e) {
                 Log.e(TAG, "Json parsing error: " + e.getMessage());
             }
         }else {

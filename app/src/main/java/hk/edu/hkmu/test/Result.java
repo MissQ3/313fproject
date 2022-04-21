@@ -70,14 +70,22 @@ public class Result extends AppCompatActivity {
         }
 
         listView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener(){
-                    public void onItemClick(AdapterView<?>parent, View view, int position, long id){
-                        HashMap<String,String> contact = searching.searchlist.get(position);
-                        AlertDialog.Builder builder = new AlertDialog.Builder(Result.this);
-                        builder.setTitle(contact.get(SchoolInfo.enname));
-                        builder.setMessage("Mobile: " + contact.get(SchoolInfo.entel));
-                        AlertDialog alertDialog = builder.create();
-                        alertDialog.show();
+                new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        HashMap<String, String> contact = searching.searchlist.get(position);
+                        if (Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(Result.this);
+                            builder.setTitle(contact.get(SchoolInfo.enname));
+                            builder.setMessage("Mobile: " + contact.get(SchoolInfo.entel));
+                            AlertDialog alertDialog = builder.create();
+                            alertDialog.show();
+                        } else if (Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(Result.this);
+                            builder.setTitle(contact.get(SchoolInfo.chname));
+                            builder.setMessage("Mobile: " + contact.get(SchoolInfo.chtel));
+                            AlertDialog alertDialog = builder.create();
+                            alertDialog.show();
+                        }
                     }
                 }
         );
