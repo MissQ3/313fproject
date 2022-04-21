@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -78,36 +79,36 @@ public class Result extends AppCompatActivity {
                         HashMap<String,String> contact = searching.searchlist.get(position);
                         AlertDialog.Builder builder = new AlertDialog.Builder(Result.this);
 
+                        LayoutInflater inflater = LayoutInflater.from(view.getContext());
+                        View skuDetail = inflater.inflate(R.layout.sku_details, null);
                         String locButton = "";
-                        String detailButton = "";
+                        builder.setView(skuDetail);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
-                            builder.setTitle(contact.get(SchoolInfo.enname));
+                            /*builder.setTitle(contact.get(SchoolInfo.enname));
                             builder.setMessage(Html.fromHtml(
                                     "<b>Mobile: </b>" + contact.get(SchoolInfo.entel) + "<br/>" +
                                             "<b>Location: </b>" + contact.get(SchoolInfo.enaddress)
-                            ));
+                            ));*/
                             locButton = "Location";
-                            detailButton = "Details";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
                             builder.setTitle(contact.get(SchoolInfo.chname));
-                            builder.setMessage(Html.fromHtml(
+                           /* builder.setMessage(Html.fromHtml(
                                     "<b>聯絡電話: </b>" + contact.get(SchoolInfo.chtel) + "<br/>" +
                                             "<b>地址: </b>" + contact.get(SchoolInfo.chaddress)
-                            ));
+                            ));*/
                             locButton = "位置";
-                            detailButton = "詳細資料";
                         }
 
-                        builder.setNeutralButton(locButton,null);
-                        builder.setPositiveButton(detailButton,new DialogInterface.OnClickListener() {
+                        builder.setNegativeButton(locButton,null);
+                        /*builder.setPositiveButton(detailButton,new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 setContentView(R.layout.sku_details);
                                 TextView err = (TextView)findViewById(R.id.name);
                                 err.setText(SchoolInfo.enname);
                             }
-                        });
+                        });*/
 
                         AlertDialog alertDialog = builder.create();
 
