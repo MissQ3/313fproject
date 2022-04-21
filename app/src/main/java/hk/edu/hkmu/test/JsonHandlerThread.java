@@ -15,6 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class JsonHandlerThread extends Thread {
@@ -72,6 +73,7 @@ public class JsonHandlerThread extends Thread {
                     // looping through All Infos
                     for (int i = 1; i < info.length(); i++) {
                         JSONObject c = info.getJSONObject(i);
+                        SchoolInfo.getlist(c);
                         String schoolid = c.getString("A");
                         String encat = c.getString("B");
                         String enname = c.getString("D");
