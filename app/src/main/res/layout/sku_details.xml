@@ -2,28 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10px">
+    android:orientation="horizontal"
+    android:padding="50px">
 
 
-    <TextView
-        android:id="@+id/name"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="School Name" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10px">
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="School Address\n" />
+        <TextView
+            android:id="@+id/resultname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="School Name" />
 
-    <TextView
-        android:id="@+id/tele"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Telephone Number" />
+        <TextView
+            android:id="@+id/result_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="School Address\n" />
+
+        <TextView
+            android:id="@+id/result_tele"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Telephone Number" />
+    </LinearLayout>
 </LinearLayout>

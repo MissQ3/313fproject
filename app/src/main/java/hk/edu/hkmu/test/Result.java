@@ -100,6 +100,9 @@ public class Result extends AppCompatActivity {
                             locButton = "位置";
                         }
 
+                        TextView resultTextView = skuDetail.findViewById(R.id.resultname);
+                        resultTextView.setText(contact.get(SchoolInfo.enname));
+
                         builder.setNegativeButton(locButton,null);
                         /*builder.setPositiveButton(detailButton,new DialogInterface.OnClickListener() {
                             @Override
