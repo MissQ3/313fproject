@@ -3,18 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/lbens/Documents/GitHub/313fproject/app/src/main/res/layout/activity_input_name.xml" value="0.2223731884057971" />
-        <entry key="..\:/Users/lbens/Documents/GitHub/313fproject/app/src/main/res/layout/activity_main.xml" value="0.2223731884057971" />
-        <entry key="..\:/Users/lbens/Documents/GitHub/313fproject/app/src/main/res/layout/activity_result.xml" value="0.25" />
-        <entry key="..\:/Users/lbens/Documents/GitHub/313fproject/app/src/main/res/layout/activity_sku_details.xml" value="0.2930253623188406" />
-        <entry key="..\:/Users/lbens/Documents/GitHub/313fproject/app/src/main/res/layout/list_view_layout.xml" value="0.2223731884057971" />
-        <entry key="..\:/Users/lbens/Documents/GitHub/313fproject/app/src/main/res/layout/sku_details.xml" value="0.2930253623188406" />
-        <entry key="..\:/Users/lbens/Documents/GitHub/313fproject/app/src/main/res/layout/sky_detail.xml" value="0.2930253623188406" />
         <entry key="..\:/Users/waito/AndroidStudioProjects/test/app/src/main/res/layout/activity_input_cri.xml" value="0.3745471014492754" />
         <entry key="..\:/Users/waito/AndroidStudioProjects/test/app/src/main/res/layout/activity_input_name.xml" value="0.24583333333333332" />
         <entry key="..\:/Users/waito/AndroidStudioProjects/test/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/waito/AndroidStudioProjects/test/app/src/main/res/layout/activity_result.xml" value="0.3745471014492754" />
         <entry key="..\:/Users/waito/AndroidStudioProjects/test/app/src/main/res/layout/list_view_layout.xml" value="0.3745471014492754" />
+        <entry key="..\:/Users/waito/AndroidStudioProjects/test/app/src/main/res/layout/sku_details.xml" value="0.19427558257345492" />
       </map>
     </option>
   </component>

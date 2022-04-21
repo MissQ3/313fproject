@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">test</string>
+    <string name="category">Category</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="gender">Students Gender</string>
+    <string name="session">Session</string>
+    <string name="district">District</string>
+    <string name="fintype">Finance Type</string>
+    <string name="level">School Level</string>
+    <string name="tele">Telephone</string>
+    <string name="fax">Fax Number</string>
+    <string name="website">WebSite</string>
+    <string name="religion">Religion</string>
 </resources>
