@@ -28,6 +28,13 @@
             android:text="School Address\n" />
 
         <TextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Students Gender: Boys? Or girls?" />
+
+        <TextView
             android:id="@+id/tele"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,6 +47,15 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:text="Website: Link (Not the one from Zelda)"
+            android:autoLink="web"
+            android:linksClickable="true"/>
+
+        <TextView
+            android:id="@+id/religion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Religion: Do you love Jesus or Buddha?"
             android:autoLink="web"
             android:linksClickable="true"/>
     </LinearLayout>

@@ -86,22 +86,56 @@ public class Result extends AppCompatActivity {
 
                         TextView resultSkuName = skuDetail.findViewById(R.id.name);
                         TextView resultAddress = skuDetail.findViewById(R.id.address);
+                        TextView resultGender = skuDetail.findViewById(R.id.gender);
                         TextView resultTel = skuDetail.findViewById(R.id.tele);
                         TextView resultWeb = skuDetail.findViewById(R.id.web);
+                        TextView resultRelig = skuDetail.findViewById(R.id.religion);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
                             resultSkuName.setText(contact.get(SchoolInfo.enname));
                             resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
-                            resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
-                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
-                                    "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
+
+                            resultGender.setText("Students Gender: " + contact.get(SchoolInfo.engender));
+
+                            if (contact.get(SchoolInfo.entel).isEmpty()) {
+                                resultTel.setText("Telephone: N/A");
+                            }
+                            else {
+                                resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
+                            }
+
+                            if (contact.get(SchoolInfo.enweb).isEmpty()){
+                                resultWeb.setText("Website: N/A");
+                            }
+                            else {
+                                resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.chweb) +
+                                        "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
+                            }
+
+                            resultRelig.setText("Religion: " + contact.get(SchoolInfo.enreligion));
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
                             resultSkuName.setText(contact.get(SchoolInfo.chname));
                             resultAddress.setText(contact.get(SchoolInfo.chaddress) + "\n");
-                            resultTel.setText("聯絡電話: " + contact.get(SchoolInfo.chtel));
-                            resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + contact.get(SchoolInfo.chweb) +
-                                    "'> " + contact.get(SchoolInfo.chweb) + " </a>"));
+
+                            resultGender.setText("就讀學生性別: " + contact.get(SchoolInfo.chgender));
+
+                            if (contact.get(SchoolInfo.chtel).isEmpty()) {
+                                resultTel.setText("聯絡電話: N/A");
+                            }
+                            else {
+                                resultTel.setText("聯絡電話: " + contact.get(SchoolInfo.chtel));
+                            }
+
+                            if (contact.get(SchoolInfo.chweb).isEmpty()){
+                                resultWeb.setText("網站: N/A");
+                            }
+                            else {
+                                resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + contact.get(SchoolInfo.chweb) +
+                                        "'> " + contact.get(SchoolInfo.chweb) + " </a>"));
+                            }
+
+                            resultRelig.setText("宗教: " + contact.get(SchoolInfo.chreligion));
                             locButton = "顯示地圖";
                         }
 
