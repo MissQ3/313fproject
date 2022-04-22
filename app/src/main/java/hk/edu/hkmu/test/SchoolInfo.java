@@ -1,11 +1,15 @@
 package hk.edu.hkmu.test;
 
+import org.apache.commons.text.WordUtils;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class SchoolInfo {
     public static String schoolid = "ID";
@@ -45,6 +49,15 @@ public class SchoolInfo {
     public static void enaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion, String latitude, String longitude) {
 
         HashMap<String, String> info = new HashMap<>();
+        cat = WordUtils.capitalizeFully(cat);
+        name = cap(name);
+        address = cap(address);
+        gender = cap(gender);
+        session = cap(session);
+        district = cap(district);
+        fintype = cap(fintype);
+        level = cap(level);
+        religion = cap(religion);
         info.put(schoolid, id);
         info.put(encat, cat);
         info.put(enname, name);
@@ -85,6 +98,25 @@ public class SchoolInfo {
         chinfoList.add(info);
     }
 
+    private static String cap(String s){
+        char[] name = s.trim().toLowerCase().toCharArray();
+        boolean first = true;
+        for(int i = 0; i < name.length; i++)
+        {
+            if(name[i] < 'a' || name[i] > 'z')
+                first = true;
+            else
+            {
+                if(first)
+                {
+                    first = false;
+                    name[i] = Character.toUpperCase(name[i]);
+                }
+            }
+        }
+        s = String.valueOf(name);
+        return s;
+    };
     public static void getlist(JSONObject obj){
         infoList.add((JSONObject) obj);
     };

@@ -114,12 +114,15 @@ public class Result extends AppCompatActivity {
                         ArrayList<JSONObject> result=Getdetail.getDetail(contact.get(SchoolInfo.schoolid),SchoolInfo.infoList);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
-                            resultSkuName.setText(engGetdetail.getName(result));
+                            resultSkuName.setText(contact.get(SchoolInfo.enname));
                             resultAddress.setText(engGetdetail.getAddress(result) + "\n");
-                            resultTel.setText("Telephone: " + engGetdetail.getTel(result));
-                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + engGetdetail.getWeb(result) +
-                                    "'> " + engGetdetail.getWeb(result) + " </a>"));
-                            resultCat.setText("Category:"+engGetdetail.getCategory(result));
+                            resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
+                            if (!contact.get(SchoolInfo.enweb).contains("N.A.") && contact.get(SchoolInfo.enweb) != "") {
+                                resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + engGetdetail.getWeb(result) +
+                                        "'> " + engGetdetail.getWeb(result) + " </a>"));
+                            }
+                            else {resultWeb.setText("Website: N/A");};
+                            resultCat.setText("Category: "+engGetdetail.getCategory(result));
                             resultGender.setText("Student Gender: "+engGetdetail.getGender(result));
                             resultSession.setText("Session: "+engGetdetail.getSession(result));
                             resultDISTRICT.setText("District: "+engGetdetail.getDistrict(result));
@@ -128,7 +131,7 @@ public class Result extends AppCompatActivity {
                             resultFax.setText("Fax Number: "+engGetdetail.getFax(result));
                             resultReligion.setText("Religion: "+engGetdetail.getReligion(result));
 
-                            locButton = "Show in map";
+                            locButton = "Show on map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
                            resultSkuName.setText(zhGetdetail.getName(result));
                             resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
@@ -153,7 +156,7 @@ public class Result extends AppCompatActivity {
                         builder.setNegativeButton(locButton, new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query="+ contact.get(SchoolInfo.schLatitude) + "," + contact.get(SchoolInfo.schLongitude));
+                                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + contact.get(SchoolInfo.schLatitude) + ","+ contact.get(SchoolInfo.schLongitude));
                                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                                 mapIntent.setPackage("com.google.android.apps.maps");
                                 try

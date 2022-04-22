@@ -14,10 +14,11 @@
         android:id="@+id/name"
         android:hint="@string/inputedit"/>
     <RadioGroup
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/radiogroup"
+
         >
         <RadioButton
             android:layout_width="wrap_content"
