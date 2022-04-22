@@ -13,32 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/name"
         android:hint="@string/inputedit"/>
-    <RadioGroup
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/radiogroup"
-
-        >
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sortbyId"
-            android:checked="true"
-            android:text="@string/sortid"/>
-        <RadioButton
-            android:id="@+id/sortbyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="@string/sortname"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sortbyDistrict"
-            android:checked="false"
-            android:text="@string/sortdistrict"/>
-    </RadioGroup>
+   
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
