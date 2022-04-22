@@ -9,12 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button1"
-        android:text="Search by name"/>
+        android:text="@string/mainname"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
-        android:text="Search by something"/>
+        android:text="@string/maincat"/>
 
 </LinearLayout>
