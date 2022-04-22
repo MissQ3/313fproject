@@ -17,4 +17,6 @@
     <string name="sortname">Sort by Name</string>
     <string name="inputtext">Search by name</string>
     <string name="inputedit">Enter a name</string>
+    <string name="mainname">Search by Name</string>
+    <string name="maincat">Search by Category</string>
 </resources>
