@@ -53,6 +53,15 @@ public class Result extends AppCompatActivity {
         }
         Intent intent = getIntent();
         String searchstr = intent.getStringExtra(InputName.EXTRA_MESSAGE);
+        
+        String checkSortingMethod = intent.getStringExtra(InputName.EXTRA_CHECK);
+        if(checkSortingMethod.equals("Sortbyid")){
+            SchoolInfo.sortbyId();
+        }else if(checkSortingMethod.equals("Sortbyname")){
+            SchoolInfo.sortbyName();
+        }else if(checkSortingMethod.equals(("Sortbydistrict"))){
+            SchoolInfo.sortbyDistrict();
+        }
 
         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
             searching.ensearchname(searchstr);
@@ -103,11 +112,11 @@ public class Result extends AppCompatActivity {
                         ArrayList<JSONObject> result=Getdetail.getDetail(contact.get(SchoolInfo.schoolid),SchoolInfo.infoList);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
-                            resultSkuName.setText(contact.get(SchoolInfo.enname));
-                            resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
-                            resultTel.setText("Telephone: " + contact.get(SchoolInfo.entel));
-                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
-                                    "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
+                            resultSkuName.setText(engGetdetail.getName(result));
+                            resultAddress.setText(engGetdetail.getAddress(result) + "\n");
+                            resultTel.setText("Telephone: " + engGetdetail.getTel(result));
+                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + engGetdetail.getWeb(result) +
+                                    "'> " + engGetdetail.getWeb(result) + " </a>"));
                             resultCat.setText("CATEGORY:"+engGetdetail.getCategory(result));
                             resultGender.setText("STUDENTS GENDER: "+engGetdetail.getGender(result));
                             resultSession.setText("SESSION: "+engGetdetail.getSession(result));
@@ -119,19 +128,19 @@ public class Result extends AppCompatActivity {
 
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
-                            resultSkuName.setText(contact.get(SchoolInfo.chname));
-                            resultAddress.setText(contact.get(SchoolInfo.chaddress) + "\n");
-                            resultTel.setText("聯絡電話: " + contact.get(SchoolInfo.chtel));
-                            resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + contact.get(SchoolInfo.chweb) +
-                                    "'> " + contact.get(SchoolInfo.chweb) + " </a>"));
-                            resultSkuName.setText(contact.get(SchoolInfo.enname));
-                            resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
+                           resultSkuName.setText(zhGetdetail.getName(result));
+                            resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
+                            resultTel.setText("聯絡電話: " + zhGetdetail.getTel(result));
+                            resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + zhGetdetail.getWeb(result) +
+                                    "'> " + zhGetdetail.getWeb(result) + " </a>"));
+                            resultSkuName.setText(zhGetdetail.getName(result));
+                            resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
                             resultTel.setText("電話: " + contact.get(SchoolInfo.entel));
                             resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
                                     "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
                             resultCat.setText("類型 :"+zhGetdetail.getCategory(result));
                             resultGender.setText("就讀學生性別: "+zhGetdetail.getGender(result));
-                            resultSession.setText("s: "+zhGetdetail.getSession(result));
+                            resultSession.setText("學校授課時間: "+zhGetdetail.getSession(result));
                             resultDISTRICT.setText("分區: "+zhGetdetail.getDistrict(result));
                             resultFinance.setText("資助種類: "+zhGetdetail.getFinance(result));
                             resultLevel.setText("學校類型: "+zhGetdetail.getLevel(result));
