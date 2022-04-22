@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import org.json.*;
@@ -130,7 +131,7 @@ public class Result extends AppCompatActivity {
                                     "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
                             resultCat.setText("類型 :"+zhGetdetail.getCategory(result));
                             resultGender.setText("就讀學生性別: "+zhGetdetail.getGender(result));
-                            resultSession.setText("學校授課時間: "+zhGetdetail.getSession(result));
+                            resultSession.setText("s: "+zhGetdetail.getSession(result));
                             resultDISTRICT.setText("分區: "+zhGetdetail.getDistrict(result));
                             resultFinance.setText("資助種類: "+zhGetdetail.getFinance(result));
                             resultLevel.setText("學校類型: "+zhGetdetail.getLevel(result));
@@ -139,7 +140,17 @@ public class Result extends AppCompatActivity {
                             locButton = "顯示地圖";
                         }
 
-                        builder.setNegativeButton(locButton,null);
+                        builder.setNegativeButton(locButton, new DialogInterface.OnClickListener(){
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query="+ contact.get(SchoolInfo.enname) + " " + contact.get(SchoolInfo.endistrict));
+                                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                                mapIntent.setPackage("com.google.android.apps.maps");
+                                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                                    startActivity(mapIntent);
+                                }
+                            }
+                        });
                         /*builder.setPositiveButton(detailButton,new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
