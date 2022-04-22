@@ -43,21 +43,12 @@ public class SchoolInfo {
 
     public static ArrayList<HashMap<String, String>> eninfoList = new ArrayList<>();
     public static ArrayList<HashMap<String, String>> chinfoList = new ArrayList<>();
-    public static ArrayList<JSONObject> infoList = new ArrayList<>();
+    public static String refresh = "not refresh";
 
     // Creates and add contact to contact list
     public static void enaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion, String latitude, String longitude) {
 
         HashMap<String, String> info = new HashMap<>();
-        cat = WordUtils.capitalizeFully(cat);
-        name = cap(name);
-        address = cap(address);
-        gender = cap(gender);
-        session = cap(session);
-        district = cap(district);
-        fintype = cap(fintype);
-        level = cap(level);
-        religion = cap(religion);
         info.put(schoolid, id);
         info.put(encat, cat);
         info.put(enname, name);
@@ -98,28 +89,6 @@ public class SchoolInfo {
         chinfoList.add(info);
     }
 
-    private static String cap(String s){
-        char[] name = s.trim().toLowerCase().toCharArray();
-        boolean first = true;
-        for(int i = 0; i < name.length; i++)
-        {
-            if(name[i] < 'a' || name[i] > 'z')
-                first = true;
-            else
-            {
-                if(first)
-                {
-                    first = false;
-                    name[i] = Character.toUpperCase(name[i]);
-                }
-            }
-        }
-        s = String.valueOf(name);
-        return s;
-    };
-    public static void getlist(JSONObject obj){
-        infoList.add((JSONObject) obj);
-    };
     public static void sortbyId(){
         Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
             @Override
@@ -210,4 +179,13 @@ public class SchoolInfo {
             }
         });
     }
+
+    public static void refresh(){
+        refresh = "refresh";
+    }
+
+    public static void reloadRefresh(){
+        refresh = "not refresh";
+    }
 }
+
