@@ -128,7 +128,7 @@ public class Result extends AppCompatActivity {
 
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
-                           esultSkuName.setText(zhGetdetail.getName(result));
+                           resultSkuName.setText(zhGetdetail.getName(result));
                             resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
                             //String website=zhGetdetail.getWeb(result);(debug)
                             resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + zhGetdetail.getWeb(result) +
