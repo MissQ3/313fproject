@@ -3,6 +3,8 @@ package hk.edu.hkmu.test;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class SchoolInfo {
@@ -80,4 +82,94 @@ public class SchoolInfo {
     public static void getlist(JSONObject obj){
         infoList.add((JSONObject) obj);
     };
+    public static void sortbyId(){
+        Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1,v2;
+                try{
+                    v1 =o1.get(schoolid);
+                    v2 =o2.get(schoolid);
+                    return v1.compareTo(v2);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+        Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1,v2;
+                try{
+                    v1 =o1.get(schoolid);
+                    v2 =o2.get(schoolid);
+                    return v1.compareTo(v2);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+    }
+    public static void sortbyName(){
+        Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1,v2;
+                try{
+                    v1 =o1.get(enname);
+                    v2 =o2.get(enname);
+                    return v1.compareTo(v2);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+        Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1,v2;
+                try{
+                    v1 =o1.get(chname);
+                    v2 =o2.get(chname);
+                    return v1.compareTo(v2);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+    }
+    public static void sortbyDistrict(){
+        Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1,v2;
+                try{
+                    v1 =o1.get(endistrict);
+                    v2 =o2.get(endistrict);
+                    return v1.compareTo(v2);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+        Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1,v2;
+                try{
+                    v1 =o1.get(chdistrict);
+                    v2 =o2.get(chdistrict);
+                    return v1.compareTo(v2);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+    }
 }
