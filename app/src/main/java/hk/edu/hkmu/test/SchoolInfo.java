@@ -33,10 +33,8 @@ public class SchoolInfo {
     public static String chweb = "網頁";
     public static String enreligion = "Religion";
     public static String chreligion = "宗教";
-    public static String enlatitude = "Latitude";
-    public static String chlatitude = "緯度";
-    public static String enlongitude = "Longitude";
-    public static String chlongitude = "經度";
+    public static String schLatitude = "Latitude";
+    public static String schLongitude = "Longitude";
 
 
     public static ArrayList<HashMap<String, String>> eninfoList = new ArrayList<>();
@@ -60,8 +58,8 @@ public class SchoolInfo {
         info.put(enfax, fax);
         info.put(enweb, website);
         info.put(enreligion, religion);
-        info.put(enlatitude, latitude);
-        info.put(enlongitude, longitude);
+        info.put(schLatitude, latitude);
+        info.put(schLongitude, longitude);
 
         eninfoList.add(info);
     }
@@ -81,8 +79,8 @@ public class SchoolInfo {
         info.put(chfax, fax);
         info.put(chweb, website);
         info.put(chreligion, religion);
-        info.put(chlatitude, latitude);
-        info.put(chlongitude, longitude);
+        info.put(schLatitude, latitude);
+        info.put(schLongitude, longitude);
 
         chinfoList.add(info);
     }

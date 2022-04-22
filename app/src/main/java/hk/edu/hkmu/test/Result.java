@@ -110,7 +110,7 @@ public class Result extends AppCompatActivity {
                         TextView resultLevel = skuDetail.findViewById(R.id.skuLevel);
                         TextView resultFax = skuDetail.findViewById(R.id.skuFax);
                         TextView resultReligion = skuDetail.findViewById(R.id.skuReligion);
-                        
+
                         ArrayList<JSONObject> result=Getdetail.getDetail(contact.get(SchoolInfo.schoolid),SchoolInfo.infoList);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
@@ -153,7 +153,7 @@ public class Result extends AppCompatActivity {
                         builder.setNegativeButton(locButton, new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query="+ contact.get(SchoolInfo.enlatitude) + "," + contact.get(SchoolInfo.enlongitude));
+                                Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query="+ contact.get(SchoolInfo.schLatitude) + "," + contact.get(SchoolInfo.schLongitude));
                                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                                 mapIntent.setPackage("com.google.android.apps.maps");
                                 try
