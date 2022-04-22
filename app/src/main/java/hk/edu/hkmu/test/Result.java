@@ -3,6 +3,7 @@ package hk.edu.hkmu.test;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -117,14 +119,14 @@ public class Result extends AppCompatActivity {
                             resultTel.setText("Telephone: " + engGetdetail.getTel(result));
                             resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + engGetdetail.getWeb(result) +
                                     "'> " + engGetdetail.getWeb(result) + " </a>"));
-                            resultCat.setText("CATEGORY:"+engGetdetail.getCategory(result));
-                            resultGender.setText("STUDENTS GENDER: "+engGetdetail.getGender(result));
-                            resultSession.setText("SESSION: "+engGetdetail.getSession(result));
-                            resultDISTRICT.setText("DISTRICT: "+engGetdetail.getDistrict(result));
-                            resultFinance.setText("FINANCE TYPE: "+engGetdetail.getFinance(result));
-                            resultLevel.setText("SCHOOL LEVEL: "+engGetdetail.getLevel(result));
-                            resultFax.setText("FAX NUMBER: "+engGetdetail.getFax(result));
-                            resultReligion.setText("RELIGION: "+engGetdetail.getReligion(result));
+                            resultCat.setText("Category:"+engGetdetail.getCategory(result));
+                            resultGender.setText("Student Gender: "+engGetdetail.getGender(result));
+                            resultSession.setText("Session: "+engGetdetail.getSession(result));
+                            resultDISTRICT.setText("District: "+engGetdetail.getDistrict(result));
+                            resultFinance.setText("Finance Type: "+engGetdetail.getFinance(result));
+                            resultLevel.setText("School Level: "+engGetdetail.getLevel(result));
+                            resultFax.setText("Fax Number: "+engGetdetail.getFax(result));
+                            resultReligion.setText("Religion: "+engGetdetail.getReligion(result));
 
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
@@ -151,22 +153,27 @@ public class Result extends AppCompatActivity {
                         builder.setNegativeButton(locButton, new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query="+ contact.get(SchoolInfo.enname) + " " + contact.get(SchoolInfo.endistrict));
+                                Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query="+ contact.get(SchoolInfo.enlatitude) + "," + contact.get(SchoolInfo.enlongitude));
                                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                                 mapIntent.setPackage("com.google.android.apps.maps");
-                                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                                try
+                                {
                                     startActivity(mapIntent);
+                                }
+                                catch(ActivityNotFoundException ex)
+                                {
+                                    try
+                                    {
+                                        Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                                        startActivity(unrestrictedIntent);
+                                    }
+                                    catch(ActivityNotFoundException innerEx)
+                                    {
+                                        Toast.makeText(view.getContext(), "Please install a maps application", Toast.LENGTH_LONG).show();
+                                    }
                                 }
                             }
                         });
-                        /*builder.setPositiveButton(detailButton,new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                setContentView(R.layout.sku_details);
-                                TextView err = (TextView)findViewById(R.id.name);
-                                err.setText(SchoolInfo.enname);
-                            }
-                        });*/
 
                         AlertDialog alertDialog = builder.create();
 

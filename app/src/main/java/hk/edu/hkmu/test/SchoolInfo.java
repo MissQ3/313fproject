@@ -33,6 +33,10 @@ public class SchoolInfo {
     public static String chweb = "網頁";
     public static String enreligion = "Religion";
     public static String chreligion = "宗教";
+    public static String enlatitude = "Latitude";
+    public static String chlatitude = "緯度";
+    public static String enlongitude = "Longitude";
+    public static String chlongitude = "經度";
 
 
     public static ArrayList<HashMap<String, String>> eninfoList = new ArrayList<>();
@@ -40,7 +44,7 @@ public class SchoolInfo {
     public static ArrayList<JSONObject> infoList = new ArrayList<>();
 
     // Creates and add contact to contact list
-    public static void enaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion) {
+    public static void enaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion, String latitude, String longitude) {
 
         HashMap<String, String> info = new HashMap<>();
         info.put(schoolid, id);
@@ -56,10 +60,12 @@ public class SchoolInfo {
         info.put(enfax, fax);
         info.put(enweb, website);
         info.put(enreligion, religion);
+        info.put(enlatitude, latitude);
+        info.put(enlongitude, longitude);
 
         eninfoList.add(info);
     }
-    public static void chaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion) {
+    public static void chaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion, String latitude, String longitude) {
 
         HashMap<String, String> info = new HashMap<>();
         info.put(schoolid,id);
@@ -75,6 +81,8 @@ public class SchoolInfo {
         info.put(chfax, fax);
         info.put(chweb, website);
         info.put(chreligion, religion);
+        info.put(chlatitude, latitude);
+        info.put(chlongitude, longitude);
 
         chinfoList.add(info);
     }

@@ -87,7 +87,9 @@ public class JsonHandlerThread extends Thread {
                         String enfax = c.getString("AB");
                         String enwebsite = c.getString("AD");
                         String enreligion = c.getString("AF");
-                        SchoolInfo.enaddContact(schoolid, encat, enname, enaddress, engender, ensession, endistrict, enfintype, enlevel, entele, enfax, enwebsite, enreligion);
+                        String enlatitude = c.getString("J");
+                        String enlongitude = c.getString("H");
+                        SchoolInfo.enaddContact(schoolid, encat, enname, enaddress, engender, ensession, endistrict, enfintype, enlevel, entele, enfax, enwebsite, enreligion, enlatitude, enlongitude);
                     }
                     for (int i = 1; i < info.length(); i++) {
                         JSONObject c = info.getJSONObject(i);
@@ -104,7 +106,9 @@ public class JsonHandlerThread extends Thread {
                         String chfax = c.getString("AC");
                         String chwebsite = c.getString("AE");
                         String chreligion = c.getString("AG");
-                        SchoolInfo.chaddContact(schoolid, chcat, chname, chaddress, chgender, chsession, chdistrict, chfintype, chlevel, chtele, chfax, chwebsite, chreligion);
+                        String chlatitude = c.getString("J");
+                        String chlongitude = c.getString("H");
+                        SchoolInfo.chaddContact(schoolid, chcat, chname, chaddress, chgender, chsession, chdistrict, chfintype, chlevel, chtele, chfax, chwebsite, chreligion, chlatitude, chlongitude);
                 }
             }catch (final JSONException e) {
                 Log.e(TAG, "Json parsing error: " + e.getMessage());
