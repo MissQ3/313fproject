@@ -12,7 +12,7 @@
     <string name="fax">傳真號碼</string>
     <string name="website">網頁</string>
     <string name="religion">宗教</string>
-    <string name="sortid">以ID排</string>
-    <string name="sortdistrict">以社區排</string>
-    <string name="sortname">以名字排</string>
+    <string name="sortid">以ID排序</string>
+    <string name="sortdistrict">以社區排序</string>
+    <string name="sortname">以名字排序</string>
 </resources>
