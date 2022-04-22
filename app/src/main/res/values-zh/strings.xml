@@ -15,4 +15,6 @@
     <string name="sortid">以ID排序</string>
     <string name="sortdistrict">以社區排序</string>
     <string name="sortname">以名字排序</string>
+    <string name="inputtext">以名字搜尋</string>
+    <string name="inputedit">輸入名字</string>
 </resources>
