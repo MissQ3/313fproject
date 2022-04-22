@@ -15,4 +15,6 @@
     <string name="sortid">Sort by ID</string>
     <string name="sortdistrict">Sort by District</string>
     <string name="sortname">Sort by Name</string>
+    <string name="inputtext">Search by name</string>
+    <string name="inputedit">Enter a name</string>
 </resources>
