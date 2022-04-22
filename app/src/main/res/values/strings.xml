@@ -12,4 +12,7 @@
     <string name="fax">Fax Number</string>
     <string name="website">WebSite</string>
     <string name="religion">Religion</string>
+    <string name="sortid">Sort by ID</string>
+    <string name="sortdistrict">Sort by District</string>
+    <string name="sortname">Sort by Name</string>
 </resources>
