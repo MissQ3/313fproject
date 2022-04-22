@@ -128,16 +128,14 @@ public class Result extends AppCompatActivity {
 
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
-                           resultSkuName.setText(zhGetdetail.getName(result));
+                           esultSkuName.setText(zhGetdetail.getName(result));
                             resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
-                            resultTel.setText("聯絡電話: " + zhGetdetail.getTel(result));
+                            //String website=zhGetdetail.getWeb(result);(debug)
                             resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + zhGetdetail.getWeb(result) +
                                     "'> " + zhGetdetail.getWeb(result) + " </a>"));
                             resultSkuName.setText(zhGetdetail.getName(result));
                             resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
-                            resultTel.setText("電話: " + contact.get(SchoolInfo.entel));
-                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
-                                    "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
+                            resultTel.setText("電話: " + zhGetdetail.getTel(result));
                             resultCat.setText("類型 :"+zhGetdetail.getCategory(result));
                             resultGender.setText("就讀學生性別: "+zhGetdetail.getGender(result));
                             resultSession.setText("學校授課時間: "+zhGetdetail.getSession(result));
@@ -146,6 +144,7 @@ public class Result extends AppCompatActivity {
                             resultLevel.setText("學校類型: "+zhGetdetail.getLevel(result));
                             resultFax.setText("傳真號碼: "+zhGetdetail.getFax(result));
                             resultReligion.setText("宗教: "+zhGetdetail.getReligion(result));
+
                             locButton = "顯示地圖";
                         }
 
