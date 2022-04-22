@@ -17,4 +17,6 @@
     <string name="sortname">以名字排序</string>
     <string name="inputtext">以名字搜尋</string>
     <string name="inputedit">輸入名字</string>
+    <string name="mainname">以名字搜尋</string>
+    <string name="maincat">以分類搜尋</string>
 </resources>
