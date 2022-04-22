@@ -151,7 +151,7 @@ public class Result extends AppCompatActivity {
                             resultFinance.setText("Finance Type: "+contact.get(SchoolInfo.enfintype));
                             resultLevel.setText("School Level: "+contact.get(SchoolInfo.enlevel));
                             resultFax.setText("Fax Number: "+contact.get(SchoolInfo.enfax));
-                            resultReligion.setText("Religion: "+contact.get(SchoolInfo.ensession));
+                            resultReligion.setText("Religion: "+contact.get(SchoolInfo.enreligion));
 
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
