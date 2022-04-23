@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">test</string>
+    <string name="app_name">School Info APP</string>
     <string name="category">Category</string>
     <string name="name">Name</string>
     <string name="address">Address</string>
@@ -20,4 +20,5 @@
     <string name="mainname">Search by Name</string>
     <string name="maincat">Search by Category</string>
     <string name="resultapply">Apply</string>
+    <string name="backsearch">Go back to Search</string>
 </resources>

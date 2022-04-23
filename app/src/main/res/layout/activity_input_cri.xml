@@ -1,91 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputCri">
-
-
+    android:orientation="vertical"
+    >
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="172dp"
-        android:layout_marginEnd="68dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/spinner7"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner7"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Search by Something"/>
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*">
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Category"/>
+    </TableRow>
+    <TableRow>
+        <Spinner
+            android:layout_span="2"
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Student Gender"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Session"/>
+    </TableRow>
+    <TableRow>
+        <Spinner>
 
-    <Spinner
-        android:id="@+id/spinner7"
-        android:layout_width="195dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </Spinner>
 
-    <Spinner
-        android:id="@+id/spinner6"
-        android:layout_width="195dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <Spinner>
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/spinner6"
-        app:layout_constraintHorizontal_bias="0.474"
-        app:layout_constraintStart_toStartOf="@+id/spinner6"
-        app:layout_constraintTop_toTopOf="parent" />
+        </Spinner>
+    </TableRow>
 
-    <Spinner
-        android:id="@+id/spinner5"
-        android:layout_width="195dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="District"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Finance type"/>
+    </TableRow>
+    <TableRow>
+        <Spinner>
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/spinner5"
-        app:layout_constraintHorizontal_bias="0.474"
-        app:layout_constraintStart_toStartOf="@+id/spinner5"
-        app:layout_constraintTop_toTopOf="parent" />
+        </Spinner>
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="195dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <Spinner>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
-        app:layout_constraintTop_toTopOf="parent" />
+        </Spinner>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="School Level"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Religion"/>
+    </TableRow>
+    <TableRow>
+        <Spinner>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </Spinner>
+
+        <Spinner>
+
+        </Spinner>
+    </TableRow>
+</TableLayout>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Search by Something"/>-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner7"-->
+<!--        android:layout_width="195dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="69dp"-->
+<!--        android:layout_marginTop="172dp"-->
+<!--        android:layout_marginEnd="68dp"-->
+<!--        android:text="TextView"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/spinner7"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/spinner7"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner6"-->
+<!--        android:layout_width="195dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginStart="208dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="172dp"-->
+<!--        android:text="TextView"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/spinner6"-->
+<!--        app:layout_constraintHorizontal_bias="0.474"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/spinner6"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner5"-->
+<!--        android:layout_width="195dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginStart="208dp"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:text="TextView"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/spinner5"-->
+<!--        app:layout_constraintHorizontal_bias="0.474"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/spinner5"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="195dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:text="TextView"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/spinner"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/spinner"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</LinearLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">test</string>
+    <string name="app_name">找學校</string>
     <string name="category">類別</string>
     <string name="name">名稱</string>
     <string name="address">地址</string>
@@ -20,4 +20,5 @@
     <string name="mainname">以名字搜尋</string>
     <string name="maincat">以分類搜尋</string>
     <string name="resultapply">應用</string>
+    <string name="backsearch">回到搜尋</string>
 </resources>

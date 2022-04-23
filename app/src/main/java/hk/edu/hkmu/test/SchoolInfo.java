@@ -49,6 +49,14 @@ public class SchoolInfo {
     public static void enaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion, String latitude, String longitude) {
 
         HashMap<String, String> info = new HashMap<>();
+        name = capitalizeString(name);
+        address = capitalizeString(address);
+        gender = capitalizeString(gender);
+        session = capitalizeString(session);
+        district = capitalizeString(district);
+        fintype = capitalizeString(fintype);
+        level = capitalizeString(level);
+        religion = capitalizeString(religion);
         info.put(schoolid, id);
         info.put(encat, cat);
         info.put(enname, name);
@@ -67,10 +75,11 @@ public class SchoolInfo {
 
         eninfoList.add(info);
     }
+
     public static void chaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion, String latitude, String longitude) {
 
         HashMap<String, String> info = new HashMap<>();
-        info.put(schoolid,id);
+        info.put(schoolid, id);
         info.put(chcat, cat);
         info.put(chname, name);
         info.put(chaddress, address);
@@ -89,46 +98,30 @@ public class SchoolInfo {
         chinfoList.add(info);
     }
 
-    public static void sortbyId(){
-        Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
-            @Override
-            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-                String v1,v2;
-                try{
-                    v1 =o1.get(schoolid);
-                    v2 =o2.get(schoolid);
-                    return v1.compareTo(v2);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                return 2;
+    public static String capitalizeString(String string) {
+        char[] chars = string.toLowerCase().toCharArray();
+        boolean first = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!first && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                first = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i] == '(' || chars[i] == '-' || chars[i] == '.') {
+                first = false;
             }
-        });
-        Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
-            @Override
-            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-                String v1,v2;
-                try{
-                    v1 =o1.get(schoolid);
-                    v2 =o2.get(schoolid);
-                    return v1.compareTo(v2);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                return 2;
-            }
-        });
+        }
+        return String.valueOf(chars);
     }
-    public static void sortbyName(){
+
+    public static void sortbyId() {
         Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
             @Override
             public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-                String v1,v2;
-                try{
-                    v1 =o1.get(enname);
-                    v2 =o2.get(enname);
+                String v1, v2;
+                try {
+                    v1 = o1.get(schoolid);
+                    v2 = o2.get(schoolid);
                     return v1.compareTo(v2);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return 2;
@@ -137,42 +130,12 @@ public class SchoolInfo {
         Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
             @Override
             public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-                String v1,v2;
-                try{
-                    v1 =o1.get(chname);
-                    v2 =o2.get(chname);
+                String v1, v2;
+                try {
+                    v1 = o1.get(schoolid);
+                    v2 = o2.get(schoolid);
                     return v1.compareTo(v2);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                return 2;
-            }
-        });
-    }
-    public static void sortbyDistrict(){
-        Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
-            @Override
-            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-                String v1,v2;
-                try{
-                    v1 =o1.get(endistrict);
-                    v2 =o2.get(endistrict);
-                    return v1.compareTo(v2);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                return 2;
-            }
-        });
-        Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
-            @Override
-            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-                String v1,v2;
-                try{
-                    v1 =o1.get(chdistrict);
-                    v2 =o2.get(chdistrict);
-                    return v1.compareTo(v2);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return 2;
@@ -180,12 +143,66 @@ public class SchoolInfo {
         });
     }
 
-    public static void refresh(){
-        refresh = "refresh";
+    public static void sortbyName() {
+        Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1, v2;
+                try {
+                    v1 = o1.get(enname);
+                    v2 = o2.get(enname);
+                    return v1.compareTo(v2);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+        Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1, v2;
+                try {
+                    v1 = o1.get(chname);
+                    v2 = o2.get(chname);
+                    return v1.compareTo(v2);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
     }
 
-    public static void reloadRefresh(){
-        refresh = "not refresh";
+    public static void sortbyDistrict() {
+        Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1, v2;
+                try {
+                    v1 = o1.get(endistrict);
+                    v2 = o2.get(endistrict);
+                    return v1.compareTo(v2);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
+        Collections.sort(chinfoList, new Comparator<HashMap<String, String>>() {
+            @Override
+            public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                String v1, v2;
+                try {
+                    v1 = o1.get(chdistrict);
+                    v2 = o2.get(chdistrict);
+                    return v1.compareTo(v2);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return 2;
+            }
+        });
     }
 }
 
