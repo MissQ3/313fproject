@@ -13,12 +13,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/name"
         android:hint="@string/inputedit"/>
-   
+
     <Button
+        android:id="@+id/submitbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submitbutton"/>
+        android:backgroundTint="@color/HKMU_Blue"
+        android:text="Submit" />
 
 
 </LinearLayout>

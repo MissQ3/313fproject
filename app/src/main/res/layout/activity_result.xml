@@ -31,16 +31,18 @@
     </RadioGroup>
 
     <Button
-        android:layout_height="wrap_content"
+        android:id="@+id/apply_button"
         android:layout_width="match_parent"
-        android:text="@string/resultapply"
-        android:id="@+id/apply_button"/>
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/HKMU_Blue"
+        android:text="@string/resultapply" />
 
     <Button
+        android:id="@+id/back_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go back to Search"
-        android:id="@+id/back_button"/>
+        android:backgroundTint="@color/HKMU_Blue"
+        android:text="Go back to Search" />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
