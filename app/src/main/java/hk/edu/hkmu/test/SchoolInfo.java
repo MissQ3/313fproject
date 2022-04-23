@@ -1,11 +1,15 @@
 package hk.edu.hkmu.test;
 
+import org.apache.commons.text.WordUtils;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class SchoolInfo {
     public static String schoolid = "ID";
@@ -39,7 +43,7 @@ public class SchoolInfo {
 
     public static ArrayList<HashMap<String, String>> eninfoList = new ArrayList<>();
     public static ArrayList<HashMap<String, String>> chinfoList = new ArrayList<>();
-    public static ArrayList<JSONObject> infoList = new ArrayList<>();
+    public static String refresh = "not refresh";
 
     // Creates and add contact to contact list
     public static void enaddContact(String id, String cat, String name, String address, String gender, String session, String district, String fintype, String level, String tele, String fax, String website, String religion, String latitude, String longitude) {
@@ -85,9 +89,6 @@ public class SchoolInfo {
         chinfoList.add(info);
     }
 
-    public static void getlist(JSONObject obj){
-        infoList.add((JSONObject) obj);
-    };
     public static void sortbyId(){
         Collections.sort(eninfoList, new Comparator<HashMap<String, String>>() {
             @Override
@@ -178,4 +179,13 @@ public class SchoolInfo {
             }
         });
     }
+
+    public static void refresh(){
+        refresh = "refresh";
+    }
+
+    public static void reloadRefresh(){
+        refresh = "not refresh";
+    }
 }
+

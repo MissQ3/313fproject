@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,13 +29,23 @@ public class Result extends AppCompatActivity {
     private String TAG = "Result";
     private ListView listView;
     private Button backbutton;
+    private Button applybutton;
+    private RadioButton sortid;
+    private RadioButton sortname;
+    private RadioButton sortdistrict;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
         listView = (ListView)findViewById(R.id.listview);
+        applybutton=findViewById(R.id.apply_button);
         backbutton = findViewById(R.id.back_button);
+        sortid = findViewById(R.id.sortbyId);
+        sortname = findViewById(R.id.sortbyName);
+        sortdistrict = findViewById(R.id.sortbyDistrict);
+
         backbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(Result.this, MainActivity.class);
@@ -42,9 +53,33 @@ public class Result extends AppCompatActivity {
                 finish();
             }
         });
-        SchoolInfo.eninfoList.clear();
-        SchoolInfo.chinfoList.clear();
-        SchoolInfo.infoList.clear();
+
+        applybutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean sortbyid = sortid.isChecked();
+                boolean sortbyname = sortname.isChecked();
+                boolean sortbydistrict = sortdistrict.isChecked();
+                if(sortbyid){
+                    SchoolInfo.sortbyId();
+                }else if(sortbyname){
+                    SchoolInfo.sortbyName();
+                }else if(sortbydistrict){
+                    SchoolInfo.sortbyDistrict();
+                }
+                SchoolInfo.refresh();
+                finish();
+                startActivity(getIntent());
+            }
+        });
+
+
+        String result = SchoolInfo.refresh;
+        if(!result.equals("refresh")) {
+            SchoolInfo.eninfoList.clear();
+            SchoolInfo.chinfoList.clear();
+        }
+        SchoolInfo.reloadRefresh();
+
         JsonHandlerThread jsonHandlerThread = new JsonHandlerThread();
 
         jsonHandlerThread.start();
@@ -53,17 +88,9 @@ public class Result extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         Intent intent = getIntent();
         String searchstr = intent.getStringExtra(InputName.EXTRA_MESSAGE);
-        
-        String checkSortingMethod = intent.getStringExtra(InputName.EXTRA_CHECK);
-        if(checkSortingMethod.equals("Sortbyid")){
-            SchoolInfo.sortbyId();
-        }else if(checkSortingMethod.equals("Sortbyname")){
-            SchoolInfo.sortbyName();
-        }else if(checkSortingMethod.equals(("Sortbydistrict"))){
-            SchoolInfo.sortbyDistrict();
-        }
 
         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
             searching.ensearchname(searchstr);
@@ -111,41 +138,39 @@ public class Result extends AppCompatActivity {
                         TextView resultFax = skuDetail.findViewById(R.id.skuFax);
                         TextView resultReligion = skuDetail.findViewById(R.id.skuReligion);
 
-                        ArrayList<JSONObject> result=Getdetail.getDetail(contact.get(SchoolInfo.schoolid),SchoolInfo.infoList);
 
                         if(Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
-                            resultSkuName.setText(engGetdetail.getName(result));
-                            resultAddress.setText(engGetdetail.getAddress(result) + "\n");
-                            resultTel.setText("Telephone: " + engGetdetail.getTel(result));
-                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + engGetdetail.getWeb(result) +
-                                    "'> " + engGetdetail.getWeb(result) + " </a>"));
-                            resultCat.setText("Category:"+engGetdetail.getCategory(result));
-                            resultGender.setText("Student Gender: "+engGetdetail.getGender(result));
-                            resultSession.setText("Session: "+engGetdetail.getSession(result));
-                            resultDISTRICT.setText("District: "+engGetdetail.getDistrict(result));
-                            resultFinance.setText("Finance Type: "+engGetdetail.getFinance(result));
-                            resultLevel.setText("School Level: "+engGetdetail.getLevel(result));
-                            resultFax.setText("Fax Number: "+engGetdetail.getFax(result));
-                            resultReligion.setText("Religion: "+engGetdetail.getReligion(result));
+                            resultSkuName.setText(contact.get(SchoolInfo.enname));
+                            resultAddress.setText(contact.get(SchoolInfo.enaddress) + "\n");
+                            resultTel.setText("Telephone: " + SchoolInfo.entel);
+                            resultWeb.setText(Html.fromHtml("Website: " + "<a href='" + contact.get(SchoolInfo.enweb) +
+                                    "'> " + contact.get(SchoolInfo.enweb) + " </a>"));
+                            resultCat.setText("Category:"+contact.get(SchoolInfo.encat));
+                            resultGender.setText("Student Gender: "+contact.get(SchoolInfo.engender));
+                            resultSession.setText("Session: "+contact.get(SchoolInfo.ensession));
+                            resultDISTRICT.setText("District: "+contact.get(SchoolInfo.endistrict));
+                            resultFinance.setText("Finance Type: "+contact.get(SchoolInfo.enfintype));
+                            resultLevel.setText("School Level: "+contact.get(SchoolInfo.enlevel));
+                            resultFax.setText("Fax Number: "+contact.get(SchoolInfo.enfax));
+                            resultReligion.setText("Religion: "+contact.get(SchoolInfo.enreligion));
 
                             locButton = "Show in map";
                         }else if(Locale.getDefault().getLanguage().equals(new Locale("zh").getLanguage())){
-                           resultSkuName.setText(zhGetdetail.getName(result));
-                            resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
+                           resultSkuName.setText(contact.get(SchoolInfo.chname));
+                            resultAddress.setText(contact.get(SchoolInfo.chaddress) + "\n");
                             //String website=zhGetdetail.getWeb(result);(debug)
-                            resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + zhGetdetail.getWeb(result) +
-                                    "'> " + zhGetdetail.getWeb(result) + " </a>"));
-                            resultSkuName.setText(zhGetdetail.getName(result));
-                            resultAddress.setText(zhGetdetail.getAddress(result) + "\n");
-                            resultTel.setText("電話: " + zhGetdetail.getTel(result));
-                            resultCat.setText("類型 :"+zhGetdetail.getCategory(result));
-                            resultGender.setText("就讀學生性別: "+zhGetdetail.getGender(result));
-                            resultSession.setText("學校授課時間: "+zhGetdetail.getSession(result));
-                            resultDISTRICT.setText("分區: "+zhGetdetail.getDistrict(result));
-                            resultFinance.setText("資助種類: "+zhGetdetail.getFinance(result));
-                            resultLevel.setText("學校類型: "+zhGetdetail.getLevel(result));
-                            resultFax.setText("傳真號碼: "+zhGetdetail.getFax(result));
-                            resultReligion.setText("宗教: "+zhGetdetail.getReligion(result));
+                            resultWeb.setText(Html.fromHtml("網站: " + "<a href='" + contact.get(SchoolInfo.chweb) +
+                                    "'> " + contact.get(SchoolInfo.chweb) + " </a>"));
+                            resultAddress.setText(contact.get(SchoolInfo.chaddress) + "\n");
+                            resultTel.setText("電話: " + contact.get(SchoolInfo.chtel));
+                            resultCat.setText("類型 :"+contact.get(SchoolInfo.chcat));
+                            resultGender.setText("就讀學生性別: "+contact.get(SchoolInfo.chgender));
+                            resultSession.setText("學校授課時間: "+contact.get(SchoolInfo.chsession));
+                            resultDISTRICT.setText("分區: "+contact.get(SchoolInfo.chsession));
+                            resultFinance.setText("資助種類: "+contact.get(SchoolInfo.chfintype));
+                            resultLevel.setText("學校類型: "+contact.get(SchoolInfo.chlevel));
+                            resultFax.setText("傳真號碼: "+contact.get(SchoolInfo.chfax));
+                            resultReligion.setText("宗教: "+contact.get(SchoolInfo.chreligion));
 
                             locButton = "顯示地圖";
                         }
