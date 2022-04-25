@@ -21,4 +21,85 @@
     <string name="maincat">Search by Category</string>
     <string name="resultapply">Apply</string>
     <string name="backsearch">Go back to Search</string>
+    <string name="sss">Advance Searching</string>
+    <string name="submit">Submit</string>
+    <string name="backtoresearch">Go Back To Research</string>
+
+    <string-array name="categoryspinner">
+        <item>Aided Primary Schools</item>
+        <item>Aided Secondary Schools</item>
+        <item>Aided Special Schools</item>
+        <item>Caput Secondary Schools</item>
+        <item>Direct Subsidy Scheme Primary Schools</item>
+        <item>Direct Subsidy Scheme Secondary Schools</item>
+        <item>English Schools Foundation (Primary)</item>
+        <item>English Schools Foundation (Secondary)</item>
+        <item>Government Primary Schools</item>
+        <item>Government Secondary Schools</item>
+        <item>International Schools (Primary)</item>
+        <item>International Schools (Secondary)</item>
+        <item>Kindergarten-cum-child Care Centres</item>
+        <item>Kindergartens</item>
+        <item>Private Primary Schools</item>
+        <item>Private Secondary Schools (Day/Evening)</item>
+    </string-array>
+    <string-array name="genderspinner">
+        <item>Male</item>
+        <item>Female</item>
+        <item>CO-ED</item>
+    </string-array>
+    <string-array name="sessionspinner">
+        <item>A.M.</item>
+        <item>P.M</item>
+        <item>EVENING</item>
+        <item>WHOLE DAY</item>
+    </string-array>
+    <string-array name="districtspinner">
+        <item>KOWLOON CITY</item>
+        <item>SHA TIN</item>
+        <item>WAN CHAI</item>
+        <item>TUEN MUN</item>
+        <item>YUEN LONG</item>
+        <item>ISLANDS</item>
+        <item>KWAI TSING</item>
+        <item>NORTH</item>
+        <item>CENTRAL AND WESTERN</item>
+        <item>TAI PO</item>
+        <item>SAI KUNG</item>
+        <item>TSUEN WAN</item>
+        <item>KWUN TONG</item>
+        <item>SHAM SHUI PO</item>
+        <item>EASTERN</item>
+        <item>WONG TAI SIN</item>
+        <item>YAU TSIM MONG</item>
+        <item>SOUTHERN</item>
+        <item>SHUM SHUI PO</item>
+    </string-array>
+    <string-array name="fintypespineer">
+        <item>AIDED</item>
+        <item>CAPUT</item>
+        <item>DIRECT SUBSIDY SCHEME</item>
+        <item>ENGLISH SCHOOLS FOUNDATION</item>
+        <item>GOVERNMENT</item>
+        <item>PRIVATE</item>
+        <item>PRIVATE INDEPENDENT SCH SCHEME</item>
+    </string-array>
+    <string-array name="levelspinner">
+        <item>KINDERGARTEN</item>
+        <item>KINDERGARTEN-CUM-CHILD CARE CENTRES</item>
+        <item>PRIMARY</item>
+        <item>SECONDARY</item>
+    </string-array>
+    <string-array name="religionspinner">
+        <item>CATHOLICISM</item>
+        <item>PROTESTANTISM / CHRISTIANITY</item>
+        <item>NOT APPLICABLE</item>
+        <item>BUDDHISM</item>
+        <item>TAOISM</item>
+        <item>ISLAM</item>
+        <item>CONFUCIANISM,BUDDHISM AND TAOISM</item>
+        <item>CONFUCIANISM</item>
+        <item>SIKH</item>
+        <item>OTHERS</item>
+    </string-array>
 </resources>
