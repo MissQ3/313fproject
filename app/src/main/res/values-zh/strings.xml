@@ -1,6 +1,6 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">找學校</string>
-    <string name="category">類別</string>
+    <string name="category">類型</string>
     <string name="name">名稱</string>
     <string name="address">地址</string>
     <string name="gender">就讀學生性別</string>
@@ -21,4 +21,86 @@
     <string name="maincat">以分類搜尋</string>
     <string name="resultapply">應用</string>
     <string name="backsearch">回到搜尋</string>
+    <string name="sss">進階搜尋</string>
+    <string name="submit">提交</string>
+    <string name="backtoresearch">返回搜尋</string>
+
+    <string-array name="categoryspinner">
+        <item>資助小學</item>
+        <item>資助中學</item>
+        <item>資助特殊學校</item>
+        <item>按位津貼中學</item>
+        <item>直接資助計劃小學</item>
+        <item>直接資助計劃中學</item>
+        <item>英基學校協會（小學）</item>
+        <item>英基學校協會（中學）</item>
+        <item>官立小學</item>
+        <item>官立中學</item>
+        <item>國際學校（小學）</item>
+        <item>國際學校（中學）</item>
+        <item>幼稚園暨幼兒中心</item>
+        <item>幼稚園</item>
+        <item>私立小學</item>
+        <item>私立中學（日校 / 夜校）</item>
+    </string-array>
+    <string-array name="genderspinner">
+        <item>男</item>
+        <item>女</item>
+        <item>男女</item>
+    </string-array>
+    <string-array name="sessionspinner">
+        <item>上午</item>
+        <item>下午</item>
+        <item>夜校</item>
+        <item>全日</item>
+    </string-array>
+    <string-array name="districtspinner">
+        <item>九龍城區</item>
+        <item>沙田區</item>
+        <item>灣仔區</item>
+        <item>屯門區</item>
+        <item>元朗區</item>
+        <item>離島區</item>
+        <item>葵青區</item>
+        <item>北區</item>
+        <item>中西區</item>
+        <item>大埔區</item>
+        <item>西貢區</item>
+        <item>荃灣區</item>
+        <item>觀塘區</item>
+        <item>深水埗區</item>
+        <item>東區</item>
+        <item>黃大仙區</item>
+        <item>油尖旺區</item>
+        <item>南區</item>
+        <item>觀塘</item>
+    </string-array>
+    <string-array name="fintypespineer">
+        <item>資助</item>
+        <item>按位津貼</item>
+        <item>直接資助計劃</item>
+        <item>英基學校協會</item>
+        <item>官立</item>
+        <item>私立</item>
+        <item>私立獨立學校計劃</item>
+    </string-array>
+    <string-array name="levelspinner">
+        <item>幼稚園</item>
+        <item>幼稚園暨幼兒中心</item>
+        <item>小學</item>
+        <item>中學</item>
+    </string-array>
+    <string-array name="religionspinner">
+        <item>天主教</item>
+        <item>基督教</item>
+        <item>不適用</item>
+        <item>佛教</item>
+        <item>道教</item>
+        <item>伊斯蘭教</item>
+        <item>儒釋道三教</item>
+        <item>孔教</item>
+        <item>錫克教</item>
+        <item>無</item>
+        <item>其他</item>
+    </string-array>
 </resources>
