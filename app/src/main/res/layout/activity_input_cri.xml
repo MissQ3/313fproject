@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Search by Something"/>
+        android:text="@string/sss"/>
 <TableLayout
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
@@ -16,67 +17,82 @@
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
-            android:text="Category"/>
+            android:text="@string/category"/>
     </TableRow>
     <TableRow>
         <Spinner
+            android:id="@+id/categoryspinner"
             android:layout_span="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             />
     </TableRow>
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
-            android:text="Student Gender"
+            android:text="@string/gender"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:text="Session"/>
+            android:text="@string/session"/>
     </TableRow>
     <TableRow>
-        <Spinner>
+        <Spinner
+            android:id="@+id/genderspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        />
 
-        </Spinner>
-
-        <Spinner>
-
-        </Spinner>
+        <Spinner
+            android:id="@+id/sessionspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
     </TableRow>
 
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
-            android:text="District"
+            android:text="@string/district"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:text="Finance type"/>
+            android:text="@string/fintype"/>
     </TableRow>
     <TableRow>
-        <Spinner>
+        <Spinner
+            android:id="@+id/districtspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
-        </Spinner>
-
-        <Spinner>
-
-        </Spinner>
+        <Spinner
+            android:id="@+id/fintypespinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
     </TableRow>
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
-            android:text="School Level"
+            android:text="@string/level"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:text="Religion"/>
+            android:text="@string/religion"/>
     </TableRow>
     <TableRow>
-        <Spinner>
+        <Spinner
+            android:id="@+id/levelspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
-        </Spinner>
-
-        <Spinner>
-
-        </Spinner>
+        <Spinner
+            android:id="@+id/religionspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
     </TableRow>
 </TableLayout>
 <!--    <TextView-->
